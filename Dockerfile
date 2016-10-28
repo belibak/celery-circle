@@ -16,13 +16,14 @@ RUN apt-get update &&\
   
 
 # Add ssh key for github, and clone repo 
-#ADD github.key /github
-#RUN mkdir -p /root/.ssh && chmod 600 /github && ls -alh /root && pwd
-#COPY ssh_config /root/.ssh/config
-#RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config &&\
-#  git clone git@github.com:broadlook-technologies/Data_Optimization_Prototype.git
+ADD git/github.key /github
+RUN mkdir -p /root/.ssh\
+   && chmod 600 /github 
+COPY git/ssh_config /root/.ssh/config
+RUN echo "    StrictHostKeyChecking no" >> /etc/ssh/ssh_config\
+    && git clone git@github.com:broadlook-technologies/Data_Optimization_Prototype.git
 
-ADD Data_Optimization_Prototype /Data_Optimization_Prototype 
+#ADD Data_Optimization_Prototype /Data_Optimization_Prototype 
 
 WORKDIR /Data_Optimization_Prototype 
 
