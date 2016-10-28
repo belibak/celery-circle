@@ -1,16 +1,14 @@
 machine:
   timezone:
     Europe/Minsk
-  #python:
-  #  version: 2.7.5
   services:
     - docker
   
   
 dependencies:
   pre:
-    - pip install awscli docker-compose==1.6.2
+    - pip install awscli 
     
 test:
   pre:
-    - docker-compose build
+    - docker build -t celery -f Dockerfile-celery .
