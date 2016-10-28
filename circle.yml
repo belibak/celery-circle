@@ -11,4 +11,5 @@ dependencies:
     
 test:
   pre:
-    - docker build -t celery -f Dockerfile-celery .
+    #- docker build -t celery -f Dockerfile-celery .
+    - bash run-on-circleci.sh
