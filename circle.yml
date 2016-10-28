@@ -1,0 +1,16 @@
+machine:
+  timezone:
+    Europe/Minsk
+  python:
+    version: 2.7.5
+  services:
+    - docker
+  
+  
+dependencies:
+  pre:
+    - pip install awscli docker-compose
+    
+test:
+  pre:
+    - docker-compose build

@@ -1,0 +1,8 @@
+build.sh
+local_settings*
+salesforce_settings*
+github.key
+ssh_config
+react/Data_Optimization_Prototype
+react/builded/
+builded/ 
